@@ -8,10 +8,10 @@ btn.addEventListener('click', getDate); //function that trigs user click
 async function getDate() { //async function
   try {
     const Zipcode = document.querySelector('#zip').value; //getting zip code value using DOM
-    var fullUrll = `http://api.openweathermap.org/data/2.5/weather?zip=${Zipcode}&appid=${apiKey}&units=metric`;
+    var fullUrll = `https://api.openweathermap.org/data/2.5/weather?zip=${Zipcode}&appid=${apiKey}&units=metric`;
     if (!Zipcode) { //if user had chosen to get Temp by City Not ZIP code
       var city = document.getElementById('citySel').value; //get city name from select
-      var fullUrll = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+      var fullUrll = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     }
     const response = await fetch(fullUrll) //getting data from api
       .then(response => response.json()) //turning data to json
